@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taskly - Modern Todo App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="Image Assets/favicon/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <span><img src="Image Assets/Taskly Logo.png" alt="Taskly Logo" class="logo-light"></span>
+                    <span><img src="Image Assets/Taskly Logo Dark theme.png" alt="Taskly Logo" class="logo-dark"
+                            style="display: none;"></span>
+                    <span>Taskly</span>
+                </div>
+                <button class="theme-toggle" id="themeToggle">
+                    <svg class="sun-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                        </path>
+                    </svg>
+                    <svg class="moon-icon" style="display: none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+            <div class="hero-text">
+                <h1>Stay Organized</h1>
+                <p>Your smart, minimal, and persistent to-do list web app</p>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="top-bar">
+                <button class="add-todo-btn" id="addTodoBtn">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                    </svg>
+                    Add Task
+                </button>
+
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-filter="all">All</button>
+                    <button class="filter-tab" data-filter="active">Active</button>
+                    <button class="filter-tab" data-filter="completed">Completed</button>
+                </div>
+            </div>
+
+            <div id="todosContainer" class="todos-grid"></div>
+
+            <div id="emptyState" class="empty-state">
+                <div class="empty-image" id="emptyImage">
+                    <!-- Light theme detective image -->
+                    <svg class="light-detective" viewBox="0 0 200 200" fill="none">
+                        <circle cx="100" cy="100" r="95" fill="#f1f5f9" opacity="0.5" />
+                        <path d="M60 140 Q100 110 140 140 Q120 160 100 150 Q80 160 60 140Z" fill="#94a3b8" />
+                        <circle cx="85" cy="120" r="8" fill="#64748b" />
+                        <circle cx="115" cy="120" r="8" fill="#64748b" />
+                        <path d="M100 130 Q105 135 100 140 Q95 135 100 130" fill="#64748b" />
+                        <path d="M70 100 Q100 85 130 100 Q115 75 100 80 Q85 75 70 100Z" fill="#475569" />
+                        <circle cx="100" cy="90" r="3" fill="#1e293b" />
+                    </svg>
+
+                    <!-- Dark theme detective image -->
+                    <svg class="dark-detective" style="display: none;" viewBox="0 0 200 200" fill="none">
+                        <circle cx="100" cy="100" r="95" fill="#334155" opacity="0.5" />
+                        <path d="M60 140 Q100 110 140 140 Q120 160 100 150 Q80 160 60 140Z" fill="#64748b" />
+                        <circle cx="85" cy="120" r="8" fill="#94a3b8" />
+                        <circle cx="115" cy="120" r="8" fill="#94a3b8" />
+                        <path d="M100 130 Q105 135 100 140 Q95 135 100 130" fill="#94a3b8" />
+                        <path d="M70 100 Q100 85 130 100 Q115 75 100 80 Q85 75 70 100Z" fill="#f1f5f9" />
+                        <circle cx="100" cy="90" r="3" fill="#e2e8f0" />
+                    </svg>
+                </div>
+                <div class="empty-text">
+                    <h3>No tasks yet</h3>
+                    <p>Create your first task to get started on your journey to productivity</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Action Button -->
+        <button class="fab" id="fabBtn">+</button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 class="modal-title">Add New Task</h2>
+                <p class="modal-subtitle">What would you like to accomplish?</p>
+            </div>
+            <input type="text" class="modal-input" id="modalInput" placeholder="Enter your task..." maxlength="200">
+            <div class="modal-actions">
+                <button class="btn btn-secondary" id="cancelBtn">Cancel</button>
+                <button class="btn btn-primary" id="confirmBtn">Add Task</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
