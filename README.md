@@ -17,15 +17,9 @@ It helps you stay organized with a clean UI, dark mode, filters, and local stora
 
 ---
 
-## 📸 Screenshots
+## 🌐 Live Demo
 
-### Light Mode
-![Taskly Light Mode](Image Assets/taskly-light.png)
-
-### Dark Mode
-![Taskly Dark Mode](Image Assets/taskly-dark.png)
-
-*(replace with actual screenshots from your project)*
+👉 **Deployed Website:** [https://mytaskly-todo.netlify.app/](https://mytaskly-todo.netlify.app/)
 
 ---
 
